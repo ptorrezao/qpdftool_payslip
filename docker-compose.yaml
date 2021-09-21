@@ -3,6 +3,7 @@ services:
   qpdf:
     env_file:
       - .env
+    image: ghcr.io/ptorrezao/qpdftool_payslip/qpdftool:latest
     build: .
     volumes:
       - ./docs:/work/docs
