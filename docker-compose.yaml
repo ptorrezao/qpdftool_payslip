@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  qpdf:
+    env_file:
+      - .env
+    build: .
+    volumes:
+      - ./docs:/work/docs
+      - ./scripts:/work/scripts
+      - ./output:/work/output
