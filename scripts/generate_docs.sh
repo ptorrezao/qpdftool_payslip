@@ -10,7 +10,7 @@ done
 echo "List of ${#arr[@]} documents (${arr[@]})"
 now=$(date +"%Y%m%d")
 echo Merging docs $now.pdf will be the output
-qpdf --empty --pages $(for i in /work/processed_docs/*.pdf; do echo $i 1-z; done) -- /work/output/clear_$now.pdf
+qpdf --rotate=-90:1-5 --empty --pages $(for i in /work/processed_docs/*.pdf; do echo $i 1-z; done) -- /work/output/clear_$now.pdf
 
 qpdf --encrypt "$secretPassword" "$secretPassword" 40 --print=n -- /work/output/clear_$now.pdf /work/output/$now.pdf
 echo Output produced with Success
